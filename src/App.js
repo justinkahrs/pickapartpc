@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
-import Button from './components/Button';
+import Menu from 'material-ui/Menu';
+import MenuItem from 'material-ui/MenuItem';
+import Popover from 'material-ui/Popover';
 
 import _ from 'lodash/';
 
@@ -12,24 +12,37 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      gpu: 3,
+      showMenu: false,
+      gpu: 1,
     }
+    this.showMenu = this.showMenu.bind(this);
+  }
+
+  showMenu() {
+    this.setState({
+      showMenu: !this.state.showMenu,
+    })
   }
 
   render() {
     return (
       <div>
-        <div className="App">
-          <h1>Pick a Part PC</h1>
-          <hr/>
-          <div className="case">
-            <div className="cpu"/>
-            {_.times(this.state.gpu, String).map(() => <div className="gpu"/>)}
+        <MuiThemeProvider>
+          <div className="App">
+          <AppBar title="Pick a Part PC"
+                  onLeftIconButtonTouchTap={this.showMenu}
+          />
+            <Popover open={this.state.showMenu} onRequestClose={this.showMenu}>
+              <Menu>
+                <MenuItem>Start Building</MenuItem>
+                <MenuItem>About Us</MenuItem>
+              </Menu>
+            </Popover>
+              <div className="case">
+                <div className="cpu"/>
+                {_.times(this.state.gpu, String).map(() => <div className="gpu"/>)}
+              </div>
           </div>
-        </div>
-        <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-
-          <Button/>
         </MuiThemeProvider>
       </div>
     );
