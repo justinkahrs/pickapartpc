@@ -2,29 +2,6 @@
   text-align: center;
 }
 
-.case {
-  border-color: black;
-  background-color: darkgray;
-  height: 20em;
-  width: 20em;
-}
-
-.cpu {
-  margin-top: 1em;
-  margin-left: 1em;
-  margin-bottom: 5em;
-  background-color: green;
-  height: 5em;
-  width: 5em;
-}
-
-.gpu {
-  margin-bottom: .5em;
-  background-color: red;
-  height: 1em;
-  width: 10em;
-}
-
 .ram {
 
 }

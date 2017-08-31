@@ -5,15 +5,15 @@ import AppBar from 'material-ui/AppBar';
 import AppBarMenu from './components/AppBarMenu';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import Computer from './components/computer/Computer';
 
-import _ from 'lodash/';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       showMenu: false,
-      gpu: 1,
+      gpu: 5,
       selectedGpu: 0,
     };
     this.clickMenu = this.clickMenu.bind(this);
@@ -40,10 +40,7 @@ class App extends Component {
                   onLeftIconButtonTouchTap={this.clickMenu}
           />
             <AppBarMenu open={this.state.showMenu} onRequestClose={this.clickMenu} />
-              <div className="case">
-                <div className="cpu"/>
-                {_.times(this.state.gpu, String).map((obj, index) => <div key={index} className="gpu"/>)}
-              </div>
+              <Computer gpu={1} />
             <label>Number of GPUs</label>
             <SelectField>
               <MenuItem>1</MenuItem>
