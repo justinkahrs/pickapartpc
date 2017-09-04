@@ -1,57 +1,37 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom';
 import './App.css';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
-import AppBarMenu from './components/AppBarMenu';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
-import Computer from './components/computer/Computer';
-
+import Navigation from './components/navigation';
+import Build from './pages/Build';
+import Home from './pages/Home';
+import Contact from './pages/Contact';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      showMenu: false,
-      gpu: 5,
-      selectedGpu: 0,
-    };
-    this.clickMenu = this.clickMenu.bind(this);
-    this.clickGPU = this.clickGPU.bind(this);
-  }
-
-  clickMenu() {
-    this.setState({
-      showMenu: !this.state.showMenu,
-    })
-  }
-
-  clickGPU(value) {
-    this.setState({
-      selectedGpu: value,
-    })
+    this.state = {};
   }
   render() {
     return (
+    <Router basename={this.props.path}>
       <div>
-        <MuiThemeProvider>
-          <div className="App">
-          <AppBar title="Pick a Part PC"
-                  onLeftIconButtonTouchTap={this.clickMenu}
-          />
-            <AppBarMenu open={this.state.showMenu} onRequestClose={this.clickMenu} />
-              <Computer gpu={1} />
-            <label>Number of GPUs</label>
-            <SelectField>
-              <MenuItem>1</MenuItem>
-              <MenuItem>2</MenuItem>
-            </SelectField>
-
-          </div>
-        </MuiThemeProvider>
+        <Navigation />
+        <div className="App">
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route path="/build" component={Build}/>
+            <Route path="/contact" component={Contact}/>
+            <Route render={() => <h1>Page Not Found</h1>}/>
+          </Switch>
+        </div>
       </div>
-    );
+    </Router>
+    )
   }
-}
+};
 
-export default App;
+export default App
