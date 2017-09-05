@@ -40,6 +40,7 @@ export default class CaseSelect extends Component {
 
     return (
       <Container style={styles.leftAlign}>
+
         <Label style={styles.noBottomMargin}>Case Size</Label>
         <hr/>
         <Row style={{marginBottom: '3em'}}>
