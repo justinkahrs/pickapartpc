@@ -1,30 +1,39 @@
 import React, { Component } from 'react';
 import {
-  Collapse,
   Navbar,
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink
+  NavLink,
 } from 'reactstrap';
-import { Link } from 'react-router-dom';
-export default class Navigation extends Component {
 
-  state = {
-    open: true,
+export default class Navigation extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      isOpen: true,
+    };
+    this.toggle = this.toggle.bind(this);
   };
+
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
 
   render() {
     return (
-      <Navbar color="faded" toggleable>
-        <NavbarBrand href="/">Pick a Part PC</NavbarBrand>
-        <Collapse isOpen={this.state.open} navbar>
+      <Navbar color="light">
+        <NavbarBrand href="/">Pick A Part PC</NavbarBrand>
           <Nav className="ml-auto" navbar>
-            <NavItem><NavLink><Link to="/">Home</Link></NavLink></NavItem>
-            <NavItem><NavLink><Link to="/build">Build</Link></NavLink></NavItem>
-            <NavItem><NavLink><Link to="/contact">Contact</Link></NavLink></NavItem>
+            <NavItem>
+              <NavLink href="/build/">Build</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/contact">Contact</NavLink>
+            </NavItem>
           </Nav>
-        </Collapse>
       </Navbar>
     )
   }
