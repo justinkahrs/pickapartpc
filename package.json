@@ -4,9 +4,10 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
+    "jquery": "^3.2.1",
     "lodash": "^4.17.4",
+    "popper.js": "^1.12.5",
     "prop-types": "^15.5.10",
-    "radium": "^0.19.4",
     "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.6.0",
     "react-addons-transition-group": "^15.6.0",
@@ -16,6 +17,7 @@
     "reactstrap": "^4.8.0"
   },
   "scripts": {
+    "flow": "flow",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -31,6 +33,7 @@
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.3.0"
+    "eslint-plugin-react": "^7.3.0",
+    "flow-bin": "^0.54.1"
   }
 }

@@ -4,13 +4,14 @@ import {
   Col,
 } from 'reactstrap';
 import times from 'lodash/times';
+
 export default class Case extends Component {
   static contextTypes = {
     // some context types
   };
 
   static propTypes = {
-    prop1: PropTypes.object
+    height: PropTypes.number,
   };
 
   static defaultProps = {
@@ -18,6 +19,14 @@ export default class Case extends Component {
     width: '5.5em',
     slits: 1,
   };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      hover: false,
+    };
+    this.toggleHover = this.toggleHover.bind(this);
+  }
 
   styles = {
     case: {
@@ -35,35 +44,28 @@ export default class Case extends Component {
       height: this.props.height,
       width: this.props.width,
       padding: '1em',
-    }
+    },
   };
-  constructor(props){
-    super(props);
-    this.state = {
-      hover: false,
-    };
-    this.toggleHover = this.toggleHover.bind(this);
-  }
 
   toggleHover() {
     this.setState({
       hover: !this.state.hover,
     });
-  };
+  }
 
-  render(){
+  render() {
     return (
       <Col sm="4">
         <div>
           <a style={{}} onClick={this.props.onClick}>
-          <div style={this.state.hover ? this.styles.caseHover : this.styles.case} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
-            {this.props.name}
-            {times(this.props.slits).map((x, i) => <hr key={i}/>)}
-          </div>
+            <div style={this.state.hover ? this.styles.caseHover : this.styles.case} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
+              {this.props.name}
+              {times(this.props.slits).map((x, i) => <hr key={i} />)}
+            </div>
           </a>
         </div>
 
       </Col>
-    )
+    );
   }
 }
