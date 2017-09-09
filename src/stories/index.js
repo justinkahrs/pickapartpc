@@ -12,7 +12,7 @@ import CaseSelect from '../components/caseSelect';
 const styles = {
   textAlign: 'center',
 };
-const CenterDecorator = (storyFn) => (
+const CenterDecorator = storyFn => (
   <div style={styles}>
     { storyFn() }
   </div>
@@ -26,4 +26,4 @@ storiesOf('Button', module)
 
 storiesOf('CaseSelect', module)
   .addDecorator(CenterDecorator)
-  .add('for testing', () => <CaseSelect/>)
+  .add('for testing', () => <CaseSelect />);

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   Container,
 } from 'reactstrap';
@@ -15,6 +15,6 @@ export default class Build extends Component {
         <CpuSelect />
         <RamSelect />
       </Container>
-    )
+    );
   }
 }

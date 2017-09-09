@@ -4,6 +4,7 @@ import {
   Label,
   Row,
 } from 'reactstrap';
+
 const styles = {
   leftAlign: {
     textAlign: 'left',
@@ -30,7 +31,7 @@ export default class CpuSelect extends Component {
     return (
       <div style={styles.leftAlign}>
         <Label style={styles.noBottomMargin}>CPU</Label>
-        <hr/>
+        <hr />
         <Row>
           <Col lg="6">
             <div style={styles.amdCPU}>AMD</div>
@@ -40,6 +41,6 @@ export default class CpuSelect extends Component {
           </Col>
         </Row>
       </div>
-    )
+    );
   }
 }

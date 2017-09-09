@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Switch
+  Switch,
 } from 'react-router-dom';
 import './App.css';
 import Navigation from './components/navigation';
@@ -17,21 +17,21 @@ class App extends Component {
   }
   render() {
     return (
-    <Router basename={this.props.path}>
-      <div>
-        <Navigation />
-        <div className="App">
-          <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route path="/build" component={Build}/>
-            <Route path="/contact" component={Contact}/>
-            <Route render={() => <h1>Page Not Found</h1>}/>
-          </Switch>
+      <Router basename={this.props.path}>
+        <div>
+          <Navigation />
+          <div className="App">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/build" component={Build} />
+              <Route path="/contact" component={Contact} />
+              <Route render={() => <h1>Page Not Found</h1>} />
+            </Switch>
+          </div>
         </div>
-      </div>
-    </Router>
-    )
+      </Router>
+    );
   }
-};
+}
 
-export default App
+export default App;

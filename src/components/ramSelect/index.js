@@ -6,6 +6,7 @@ import {
   Input,
   FormGroup,
 } from 'reactstrap';
+
 const styles = {
   leftAlign: {
     textAlign: 'left',
@@ -31,7 +32,7 @@ export default class RamSelect extends Component {
     return (
       <div style={styles.leftAlign}>
         <Label style={styles.noBottomMargin}>RAM</Label>
-        <hr/>
+        <hr />
         <Row>
           <Col lg="4">
             <div>x1</div>
@@ -68,6 +69,6 @@ export default class RamSelect extends Component {
           </Col>
         </Row>
       </div>
-    )
+    );
   }
 }
