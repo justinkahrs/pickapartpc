@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-
 import {
+  Collapse,
   Container,
   Label,
   Row,
@@ -31,7 +31,7 @@ export default class CaseSelect extends Component {
 
   select(e){
     this.setState({
-      selectedCase: e,
+      selectedCase: this.state.selectedCase === e ? undefined : e,
     })
   }
 
@@ -48,8 +48,11 @@ export default class CaseSelect extends Component {
           <Case height="10em" name="Mid Tower" slits={3} onClick={() => this.select('medium')}/>
           <Case height="14em" name="Full Tower" slits={5} onClick={() => this.select('large')}/>
 
-          <Label><strong>{selectedCase}</strong></Label>
-          {selectedCase !== '' ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel libero varius, fermentum dolor vitae, semper elit. Praesent vel metus sodales sapien aliquam dignissim eget in metus. Mauris facilisis dui a est imperdiet ornare. Integer sem mauris, porttitor quis risus quis, consectetur commodo ex. Donec aliquam rhoncus metus non sollicitudin. Fusce tincidunt imperdiet ipsum, id rutrum nulla cursus eget. Nulla vulputate tempor eros non porttitor. Donec hendrerit ut mauris nec iaculis. Nam in leo tristique, lacinia tortor vel, suscipit ex. Donec in metus nisi. Sed vestibulum nunc nisi, in molestie diam sagittis vel. Ut dapibus nibh dapibus, lacinia elit a, pulvinar tortor." : null}
+          <Collapse isOpen={this.state.selectedCase}>
+            <Label><strong>{selectedCase}</strong></Label>
+            <br/>
+            {selectedCase !== '' ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel libero varius, fermentum dolor vitae, semper elit. Praesent vel metus sodales sapien aliquam dignissim eget in metus. Mauris facilisis dui a est imperdiet ornare. Integer sem mauris, porttitor quis risus quis, consectetur commodo ex. Donec aliquam rhoncus metus non sollicitudin. Fusce tincidunt imperdiet ipsum, id rutrum nulla cursus eget. Nulla vulputate tempor eros non porttitor. Donec hendrerit ut mauris nec iaculis. Nam in leo tristique, lacinia tortor vel, suscipit ex. Donec in metus nisi. Sed vestibulum nunc nisi, in molestie diam sagittis vel. Ut dapibus nibh dapibus, lacinia elit a, pulvinar tortor." : null}
+          </Collapse>
         </Row>
       </Container>
     )

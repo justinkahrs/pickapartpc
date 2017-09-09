@@ -6,6 +6,7 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 export default class Navigation extends Component {
   constructor(props){
@@ -24,17 +25,23 @@ export default class Navigation extends Component {
 
   render() {
     return (
-      <Navbar color="light">
-        <NavbarBrand href="/">Pick A Part PC</NavbarBrand>
-          <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink href="/build/">Build</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/contact">Contact</NavLink>
-            </NavItem>
-          </Nav>
-      </Navbar>
+      <div>
+        <Navbar color="faded">
+          <NavbarBrand><Link to="/">Pick A Part PC</Link></NavbarBrand>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink>
+                  <Link to='/build'>Build</Link>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink>
+                <Link to="/contact">Contact</Link>
+                </NavLink>
+              </NavItem>
+            </Nav>
+        </Navbar>
+      </div>
     )
   }
 }
