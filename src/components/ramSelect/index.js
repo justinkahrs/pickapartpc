@@ -1,11 +1,6 @@
+// @flow
 import React, { Component } from 'react';
-import {
-  Row,
-  Col,
-  Label,
-  Input,
-  FormGroup,
-} from 'reactstrap';
+import { Row, Col, Label, Input, FormGroup } from 'reactstrap';
 
 const styles = {
   leftAlign: {
@@ -49,20 +44,17 @@ export default class RamSelect extends Component {
             <FormGroup tag="fieldset">
               <FormGroup check>
                 <Label check>
-                  <Input type="radio" name="radio1" />{' '}
-                  4GB DDR4
+                  <Input type="radio" name="radio1" /> 4GB DDR4
                 </Label>
               </FormGroup>
               <FormGroup check>
                 <Label check>
-                  <Input type="radio" name="radio1" />{' '}
-                  8GB DDR4
+                  <Input type="radio" name="radio1" /> 8GB DDR4
                 </Label>
               </FormGroup>
               <FormGroup check>
                 <Label check>
-                  <Input type="radio" name="radio1" />{' '}
-                  16GB DDR4
+                  <Input type="radio" name="radio1" /> 16GB DDR4
                 </Label>
               </FormGroup>
             </FormGroup>

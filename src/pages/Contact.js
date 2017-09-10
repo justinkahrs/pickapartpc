@@ -1,9 +1,6 @@
-import React, { Component } from 'react';
+// @flow
+import * as React from 'react';
 
-export default class Contact extends Component {
-  render() {
-    return (
-      <h1>Contact</h1>
-    );
-  }
-}
+const Contact = () => <h1>Contact</h1>;
+
+export default Contact;

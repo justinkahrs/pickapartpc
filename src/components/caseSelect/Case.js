@@ -1,32 +1,20 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import {
-  Col,
-} from 'reactstrap';
-import times from 'lodash/times';
+// @flow
+import * as React from 'react';
+import { Col } from 'reactstrap';
+import * as _ from 'lodash';
 
-export default class Case extends Component {
-  static contextTypes = {
-    // some context types
-  };
-
-  static propTypes = {
-    height: PropTypes.number,
-  };
-
+class Case extends React.Component<
+  { height?: string, width: ?string, onClick: Function },
+  { hover: boolean },
+> {
   static defaultProps = {
     height: '10em',
-    width: '5.5em',
-    slits: 1,
+    width: '5em',
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      hover: false,
-    };
-    this.toggleHover = this.toggleHover.bind(this);
-  }
+  state = {
+    hover: false,
+  };
 
   styles = {
     case: {
@@ -47,25 +35,29 @@ export default class Case extends Component {
     },
   };
 
-  toggleHover() {
+  toggleHover = () => {
     this.setState({
       hover: !this.state.hover,
     });
-  }
+  };
 
   render() {
     return (
       <Col sm="4">
         <div>
-          <a style={{}} onClick={this.props.onClick}>
-            <div style={this.state.hover ? this.styles.caseHover : this.styles.case} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
+          <button onClick={this.props.onClick}>
+            <div
+              style={this.state.hover ? this.styles.caseHover : this.styles.case}
+              onMouseEnter={this.toggleHover}
+              onMouseLeave={this.toggleHover}
+            >
               {this.props.name}
-              {times(this.props.slits).map((x, i) => <hr key={i} />)}
+              {_.times(this.props.slits).map((x, i) => <hr key={i} />)}
             </div>
-          </a>
+          </button>
         </div>
-
       </Col>
     );
   }
 }
+export default Case;

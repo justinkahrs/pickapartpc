@@ -1,9 +1,6 @@
+// @flow
 import React, { Component } from 'react';
-import {
-  Col,
-  Label,
-  Row,
-} from 'reactstrap';
+import { Col, Label, Row } from 'reactstrap';
 
 const styles = {
   leftAlign: {

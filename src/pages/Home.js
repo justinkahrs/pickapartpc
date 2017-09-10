@@ -1,9 +1,6 @@
-import React, { Component } from 'react';
+// @flow
+import * as React from 'react';
 
-export default class Home extends Component {
-  render() {
-    return (
-      <h1>Home</h1>
-    );
-  }
-}
+const Home = () => <h1>Home</h1>;
+
+export default Home;
