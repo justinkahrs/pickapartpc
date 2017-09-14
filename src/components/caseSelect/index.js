@@ -25,16 +25,17 @@ export default class CaseSelect extends React.Component<{}, { selectedCase: '' }
   };
 
   render() {
+    const { leftAlign, noBottomMargin } = this.styles;
     const { selectedCase } = this.state;
     return (
-      <Container style={this.styles.leftAlign}>
-        <Label style={this.styles.noBottomMargin}>Case Size</Label>
+      <Container style={leftAlign}>
+        <Label style={noBottomMargin}>Case Size</Label>
         <hr />
         <Row style={{ marginBottom: '3em' }}>
           <Case height="5em" name="HTPC" slits={1} onClick={() => this.select('small')} />
           <Case height="10em" name="Mid Tower" slits={3} onClick={() => this.select('medium')} />
           <Case height="14em" name="Full Tower" slits={5} onClick={() => this.select('large')} />
-          <Collapse isOpen={this.state.selectedCase}>
+          <Collapse isOpen={selectedCase}>
             <Label>
               <strong>{selectedCase}</strong>
             </Label>

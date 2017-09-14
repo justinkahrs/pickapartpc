@@ -4,5 +4,6 @@ module.exports = {
   plugins: ['react', 'jsx-a11y', 'import'],
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/prop-types': [0],
   },
 };
