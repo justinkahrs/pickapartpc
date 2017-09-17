@@ -2,7 +2,7 @@
 import * as React from 'react';
 import * as _ from 'lodash';
 import { Col } from 'reactstrap';
-import Item from './Item';
+import Item from '../common/itemSelect/Item';
 
 class Case extends React.Component<
   {

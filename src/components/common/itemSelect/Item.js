@@ -1,3 +1,4 @@
+// @flow
 import * as React from 'react';
 
 const Item = ({ height, hover, onClick, toggleHover, width, children }) => {
