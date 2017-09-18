@@ -4,7 +4,7 @@ import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { NavLink as RRNavLink } from 'react-router-dom';
 
 const Navigation = () => (
-  <div>
+  <div className="navigation">
     <Navbar color="light">
       <NavbarBrand to="/" tag={RRNavLink}>
         Pick A Part PC
