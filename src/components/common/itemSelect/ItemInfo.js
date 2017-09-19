@@ -7,10 +7,10 @@ const caseText = {
   large: 'large text',
 };
 
-const getText = (selected: string) => caseText[selected];
+const getText = (selectedCase: string) => caseText[selectedCase];
 
 const ItemInfo = ({ selectedCase, confirmSelection }) => (
-  <Collapse isOpen={selectedCase}>
+  <Collapse isOpen={!!selectedCase}>
     <Col>
       <Label>
         <strong>{selectedCase}</strong>

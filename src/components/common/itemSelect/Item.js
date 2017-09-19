@@ -20,7 +20,6 @@ const Item = ({ height, hover, onClick, toggleHover, width, children }) => {
       padding: '1em',
     },
     noButtonStyle: {
-      style: 'none',
       backgroundColor: 'white',
       borderRadius: '10px',
       padding: '0px',

@@ -1,7 +1,5 @@
 export default {
-  initialState: {
-    case: {
-      selectedCase: '',
-    },
+  case: {
+    selectedCase: '',
   },
 };

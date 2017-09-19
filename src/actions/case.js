@@ -1,5 +1,5 @@
 const selectCase = (item) => ({
     type: 'select',
-    item,
+    selectedCase: item,
   });
 export default selectCase;

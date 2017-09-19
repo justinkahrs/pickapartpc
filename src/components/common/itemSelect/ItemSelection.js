@@ -2,9 +2,9 @@ import * as React from 'react';
 import { Row } from 'reactstrap';
 import ItemInfo from './ItemInfo';
 
-const ItemSelection = ({ items, selectedItem, confirmSelection }) => (
+const ItemSelection = ({ selectedItem, confirmSelection, children }) => (
   <Row style={{ marginBottom: '3em' }}>
-    {items}
+    {children}
     <ItemInfo selectedCase={selectedItem} confirmSelection={confirmSelection} />
   </Row>
 );

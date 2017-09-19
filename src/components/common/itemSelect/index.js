@@ -7,7 +7,6 @@ export default class ItemSelect extends React.Component<
   { selectedItem: string, confirmed: boolean, open: boolean },
 > {
   state = {
-    selectedItem: '',
     confirmed: false,
     open: true,
   };
@@ -37,8 +36,8 @@ export default class ItemSelect extends React.Component<
   };
 
   render() {
-    const { items, selectItem } = this.props;
-    const { confirmed, selectedItem, open } = this.state;
+    const { selectedItem, selectItem, children } = this.props;
+    const { confirmed, open } = this.state;
     return (
       <ItemDrawer
         showMain={this.showMain}
@@ -51,8 +50,9 @@ export default class ItemSelect extends React.Component<
           selectItem={selectItem}
           selectedItem={selectedItem}
           confirmSelection={this.confirmSelection}
-          items={items}
-        />
+        >
+          {children}
+        </ItemSelection>
       </ItemDrawer>
     );
   }
