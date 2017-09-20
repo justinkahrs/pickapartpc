@@ -1,3 +1,4 @@
+// @flow
 import * as React from 'react';
 import { Collapse, Container, Label } from 'reactstrap';
 import Check from 'react-icons/lib/md/check-circle';
@@ -28,7 +29,7 @@ const styles = {
 const ItemDrawer = ({ selectedItem, clear, confirmed, open, showMain, children }) => (
   <Container style={styles.leftAlign}>
     <Label onClick={showMain} style={styles.noBottomMargin}>
-      Case Size {selectedItem && `> ${selectedItem}`}
+      Case Size {confirmed && selectedItem && `> ${selectedItem}`}
     </Label>
     {confirmed && (
       // TO-DO extract this as a component

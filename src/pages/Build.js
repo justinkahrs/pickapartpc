@@ -7,6 +7,8 @@ const Build = () => (
   <Container>
     <h1>Build</h1>
     <CaseSelect />
+    <CaseSelect />
+    <CaseSelect />
   </Container>
 );
 export default Build;

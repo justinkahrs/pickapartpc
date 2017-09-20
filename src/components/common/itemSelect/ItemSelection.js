@@ -1,3 +1,4 @@
+// @flow
 import * as React from 'react';
 import { Row } from 'reactstrap';
 import ItemInfo from './ItemInfo';

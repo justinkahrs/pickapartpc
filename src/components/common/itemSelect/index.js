@@ -1,10 +1,11 @@
+// @flow
 import * as React from 'react';
 import ItemDrawer from './ItemDrawer';
 import ItemSelection from './ItemSelection';
 
 export default class ItemSelect extends React.Component<
   {},
-  { selectedItem: string, confirmed: boolean, open: boolean },
+  { confirmed: boolean, open: boolean },
 > {
   state = {
     confirmed: false,
@@ -20,12 +21,10 @@ export default class ItemSelect extends React.Component<
   };
 
   confirmSelection = () => {
-    if (this.state.selectedItem !== '') {
-      this.setState({
-        confirmed: true,
-        open: false,
-      });
-    }
+    this.setState({
+      confirmed: true,
+      open: false,
+    });
   };
 
   clear = () => {
