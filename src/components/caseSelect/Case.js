@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import * as _ from 'lodash';
 import { Col } from 'reactstrap';
