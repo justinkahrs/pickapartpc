@@ -22,14 +22,15 @@ class CaseSelect extends React.Component<{}, {}> {
   render() {
     return (
       <ItemSelect selectedItem={this.state.selectedCase}>
-        {items.map(props => (
-          <Case
-            {...props}
-            onClick={() => {
-              this.select(props.key);
-            }}
-          />
-        ))}
+        {items &&
+          items.map(props => (
+            <Case
+              {...props}
+              onClick={() => {
+                this.select(props.key);
+              }}
+            />
+          ))}
       </ItemSelect>
     );
   }

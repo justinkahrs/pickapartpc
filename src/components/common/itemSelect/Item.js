@@ -1,9 +1,8 @@
-// @flow
 import * as React from 'react';
 
 const Item = ({ height, hover, onClick, toggleHover, width, children }) => {
   const styles = {
-    case: {
+    defaultItemStyle: {
       textAlign: 'center',
       borderRadius: '10px',
       backgroundColor: 'lightgrey',
@@ -11,7 +10,7 @@ const Item = ({ height, hover, onClick, toggleHover, width, children }) => {
       width,
       padding: '1em',
     },
-    caseHover: {
+    defaultItemHover: {
       textAlign: 'center',
       borderRadius: '10px',
       backgroundColor: 'darkgrey',
@@ -19,16 +18,15 @@ const Item = ({ height, hover, onClick, toggleHover, width, children }) => {
       width,
       padding: '1em',
     },
-    noButtonStyle: {
+    buttonNoStyle: {
+      border: 'none',
       backgroundColor: 'white',
-      borderRadius: '10px',
-      padding: '0px',
     },
   };
   return (
-    <button style={styles.noButtonStyle} onClick={onClick}>
+    <button style={styles.buttonNoStyle} onClick={onClick}>
       <div
-        style={hover ? styles.caseHover : styles.case}
+        style={hover ? styles.defaultItemHover : styles.defaultItemStyle}
         onMouseEnter={toggleHover}
         onMouseLeave={toggleHover}
       >
