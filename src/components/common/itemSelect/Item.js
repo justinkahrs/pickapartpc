@@ -1,8 +1,17 @@
 import * as React from 'react';
 
-const Item = ({ height, hover, onClick, toggleHover, width, children }) => {
+const Item = ({
+  defaultStyle,
+  defaultHover,
+  height,
+  hover,
+  onClick,
+  toggleHover,
+  width,
+  children,
+}) => {
   const styles = {
-    defaultItemStyle: {
+    defaultStyle: defaultStyle || {
       textAlign: 'center',
       borderRadius: '10px',
       backgroundColor: 'lightgrey',
@@ -10,7 +19,7 @@ const Item = ({ height, hover, onClick, toggleHover, width, children }) => {
       width,
       padding: '1em',
     },
-    defaultItemHover: {
+    defaultHover: defaultHover || {
       textAlign: 'center',
       borderRadius: '10px',
       backgroundColor: 'darkgrey',
@@ -26,7 +35,7 @@ const Item = ({ height, hover, onClick, toggleHover, width, children }) => {
   return (
     <button style={styles.buttonNoStyle} onClick={onClick}>
       <div
-        style={hover ? styles.defaultItemHover : styles.defaultItemStyle}
+        style={hover ? styles.defaultHover : styles.defaultStyle}
         onMouseEnter={toggleHover}
         onMouseLeave={toggleHover}
       >

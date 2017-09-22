@@ -1,23 +1,9 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import * as _ from 'lodash';
 import { Col } from 'reactstrap';
 import Item from '../common/itemSelect/Item';
 
-class Case extends React.Component<
-  {
-    height: string,
-    width: string,
-    onClick: Function,
-    name: string,
-    slits: number,
-  },
-  { hover: boolean },
-> {
-  static defaultProps = {
-    height: '10em',
-    width: '5em',
-  };
-
+class Case extends Component {
   state = {
     hover: false,
   };
@@ -29,14 +15,13 @@ class Case extends React.Component<
   };
 
   render() {
-    const { toggleHover } = this;
     const { name, slits, onClick } = this.props;
     const { hover } = this.state;
     return (
       <Col sm="4">
-        <Item hover={hover} onClick={onClick} toggleHover={toggleHover}>
+        <Item hover={hover} onClick={onClick} toggleHover={this.toggleHover}>
           <div style={{ textAlign: 'center' }}>{name}</div>
-          {_.times(slits).map((x, i) => <hr key={i} />)}
+          {_.times(slits).map(x => <hr key={x} />)}
         </Item>
       </Col>
     );
