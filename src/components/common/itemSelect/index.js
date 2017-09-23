@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Col, Collapse, Label, Row } from 'reactstrap';
+import { Button, Collapse, Label } from 'reactstrap';
+import './itemSelect.css';
 
 import ItemDrawer from './ItemDrawer';
 
@@ -38,26 +39,25 @@ export default class ItemSelect extends Component {
     const { confirmed, open } = this.state;
     return (
       <ItemDrawer
+        className="itemDrawer"
         showMain={this.showMain}
         confirmed={confirmed}
         clear={this.clear}
         open={open}
         selectedItem={selectedItem}
       >
-        <Row style={{ marginBottom: '3em' }}>
-          {children}
-          <Collapse isOpen={!!selectedItem}>
-            <Col>
-              <Label>
-                <strong>{selectedItem}</strong>
-              </Label>
-              <br />
-              {this.getText(selectedItem)}
-              <br />
-              <Button onClick={this.confirmSelection}> Confirm Selection </Button>
-            </Col>
+        <div className="itemSelectContent">
+          <div className="items">{children}</div>
+          <Collapse className="itemInfo" isOpen={!!selectedItem}>
+            <Label>
+              <strong>{selectedItem}</strong>
+            </Label>
+            <br />
+            {this.getText(selectedItem)}
+            <br />
+            <Button onClick={this.confirmSelection}> Confirm Selection </Button>
           </Collapse>
-        </Row>
+        </div>
       </ItemDrawer>
     );
   }

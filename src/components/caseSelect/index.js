@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ItemSelect from '../common/itemSelect';
 import Case from './Case';
+import './caseSelect.css';
 
 const itemText = {
   HTPC: 'htpc text',
@@ -27,10 +28,11 @@ class CaseSelect extends Component {
 
   render() {
     return (
-      <ItemSelect itemText={itemText} selectedItem={this.state.selectedCase}>
+      <ItemSelect className="caseSelect" itemText={itemText} selectedItem={this.state.selectedCase}>
         {items &&
           items.map(props => (
             <Case
+              className="case"
               {...props}
               key={props.name}
               onClick={() => {
