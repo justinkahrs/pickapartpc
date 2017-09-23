@@ -1,15 +1,15 @@
-import * as React from 'react';
-import ItemDrawer from './ItemDrawer';
-import ItemSelection from './ItemSelection';
+import React, { Component } from 'react';
+import { Button, Col, Collapse, Label, Row } from 'reactstrap';
 
-export default class ItemSelect extends React.Component<
-  {},
-  { confirmed: boolean, open: boolean },
-> {
+import ItemDrawer from './ItemDrawer';
+
+export default class ItemSelect extends Component {
   state = {
     confirmed: false,
     open: true,
   };
+
+  getText = selectedItem => this.props.itemText[selectedItem];
 
   showMain = () => {
     if (this.state.confirmed) {
@@ -34,7 +34,7 @@ export default class ItemSelect extends React.Component<
   };
 
   render() {
-    const { selectedItem, selectItem, children } = this.props;
+    const { selectedItem, children } = this.props;
     const { confirmed, open } = this.state;
     return (
       <ItemDrawer
@@ -44,13 +44,20 @@ export default class ItemSelect extends React.Component<
         open={open}
         selectedItem={selectedItem}
       >
-        <ItemSelection
-          selectItem={selectItem}
-          selectedItem={selectedItem}
-          confirmSelection={this.confirmSelection}
-        >
+        <Row style={{ marginBottom: '3em' }}>
           {children}
-        </ItemSelection>
+          <Collapse isOpen={!!selectedItem}>
+            <Col>
+              <Label>
+                <strong>{selectedItem}</strong>
+              </Label>
+              <br />
+              {this.getText(selectedItem)}
+              <br />
+              <Button onClick={this.confirmSelection}> Confirm Selection </Button>
+            </Col>
+          </Collapse>
+        </Row>
       </ItemDrawer>
     );
   }

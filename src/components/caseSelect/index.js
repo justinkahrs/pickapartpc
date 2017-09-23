@@ -1,37 +1,40 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import ItemSelect from '../common/itemSelect';
 import Case from './Case';
 
+const itemText = {
+  HTPC: 'htpc text',
+  'Mid Tower': 'mid text',
+  'Full Tower': 'full text',
+};
+
 const items = [
-  {
-    name: 'HTPC',
-    slits: 1,
-    key: 'small',
-  },
-  { name: 'Mid Tower', slits: 3, key: 'medium' },
-  { name: 'Full Tower', slits: 5, key: 'large' },
+  { name: 'HTPC', slits: 1 },
+  { name: 'Mid Tower', slits: 3 },
+  { name: 'Full Tower', slits: 5 },
 ];
 
-class CaseSelect extends React.Component<{}, {}> {
+class CaseSelect extends Component {
   state = {
     selectedCase: '',
   };
 
   select = (e: string) => {
     this.setState({
-      selectedCase: this.state.selectedCase === e ? undefined : e,
+      selectedCase: this.state.selectedCase === e ? undefined : items.find(i => e === i.name).name,
     });
   };
 
   render() {
     return (
-      <ItemSelect selectedItem={this.state.selectedCase}>
+      <ItemSelect itemText={itemText} selectedItem={this.state.selectedCase}>
         {items &&
           items.map(props => (
             <Case
               {...props}
+              key={props.name}
               onClick={() => {
-                this.select(props.key);
+                this.select(props.name);
               }}
             />
           ))}

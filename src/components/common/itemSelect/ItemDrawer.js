@@ -1,5 +1,4 @@
-// @flow
-import * as React from 'react';
+import React from 'react';
 import { Collapse, Container, Label } from 'reactstrap';
 import Check from 'react-icons/lib/md/check-circle';
 import Trash from 'react-icons/lib/ti/trash';
@@ -32,7 +31,6 @@ const ItemDrawer = ({ selectedItem, clear, confirmed, open, showMain, children }
       Case Size {confirmed && selectedItem && `> ${selectedItem}`}
     </Label>
     {confirmed && (
-      // TO-DO extract this as a component
       <div style={styles.icons}>
         <Check style={styles.check} />
         <Trash style={styles.trash} onClick={clear} />
