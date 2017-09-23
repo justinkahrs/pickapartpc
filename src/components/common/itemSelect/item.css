@@ -1,0 +1,20 @@
+.item__button {
+  position: relative;
+  border: none;
+  outline: none;
+  text-align: center;
+  border-radius: 10px;
+  background-Color: lightgrey;
+  padding: 1em;
+  transition: margin 0.1s ease-in;
+}
+.item__button:hover {
+  position: relative;
+  cursor: pointer;
+  margin: -.5em 0;
+  transition: margin 0.1s ease-in;
+  background-color: darkgrey;
+}
+.item__button:focus {
+  outline: none;
+}

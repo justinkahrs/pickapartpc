@@ -1,0 +1,11 @@
+.itemDrawer {
+}
+.items {
+  display: flex;
+}
+.itemInfo {
+}
+.itemSelectContent {
+  margin: 0;
+  padding: 0;
+}

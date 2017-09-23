@@ -1,0 +1,26 @@
+.itemDrawer {
+  text-align: left;
+}
+.itemDrawer_header {
+  max-height: 5vh;
+}
+.itemDrawer__label {
+  margin: 0;
+}
+.itemDrawer__buttons {
+  float: right;
+}
+.itemDrawer__buttons svg {
+  cursor: pointer;
+  width: 2.25em;
+  height: 2.25em;
+}
+.itemDrawer__checkButton {
+  color: green;
+}
+.itemDrawer__trashButton {
+  color: darkgray;
+}
+.itemDrawer__trashButton:hover {
+  margin-top: -.5em;
+}
