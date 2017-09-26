@@ -9,7 +9,7 @@ import './App.css';
 
 const App = (props: { path: string }) => (
   <Router basename={props.path}>
-    <div>
+    <div className="everything">
       <Navigation />
       <div className="App">
         <Switch>
