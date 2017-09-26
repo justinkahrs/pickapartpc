@@ -1,9 +1,5 @@
-.itemDrawer {
-}
 .items {
   display: flex;
-}
-.itemInfo {
 }
 .itemSelectContent {
   margin: 0;

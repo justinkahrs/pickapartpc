@@ -1,3 +1,11 @@
 .build {
   background-color: white;
+  padding: 2em;
+}
+.build__header {
+  color: white;
+  padding: 2.5em 2.5em 1.5em 2.5em;
+}
+.build__item {
+  padding: 1em;
 }

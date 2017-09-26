@@ -1,14 +1,15 @@
 // @flow
 import * as React from 'react';
-import CaseSelect from '../components/caseSelect';
 import { Col, Container } from 'reactstrap';
+import CaseSelect from '../components/caseSelect';
 import './build.css';
 
 const Build = () => (
   <Container>
-    <h1>Build</h1>
+    <h1 className="build__header">Build</h1>
     <Col lg="12" className="build">
-      <CaseSelect />
+      <CaseSelect className="build__item" />
+      <CaseSelect className="build__item" />
     </Col>
   </Container>
 );
