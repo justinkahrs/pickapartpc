@@ -18,11 +18,14 @@
   height: 2.25em;
 }
 .itemDrawer__checkButton {
-  color: green;
+  color: #2b6d5c;
 }
 .itemDrawer__trashButton {
-  color: darkgray;
+  color: #80b1a5;
 }
 .itemDrawer__trashButton:hover {
-  margin-top: -.5em;
+  margin-top: -.1em;
+  color: #334642;
+  transform: rotate(360deg);
+  transition: transform 0.5s;
 }

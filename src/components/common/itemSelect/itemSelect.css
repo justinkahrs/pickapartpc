@@ -3,3 +3,10 @@
   min-height: 177px;
   padding-top: 1em;
 }
+.itemInfo button {
+  background-color: #3fa38a;
+  margin: 1em 0;
+}
+.itemInfo button:hover {
+  background-color: #205145;
+}
