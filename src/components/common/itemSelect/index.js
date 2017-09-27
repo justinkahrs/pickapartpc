@@ -46,18 +46,16 @@ export default class ItemSelect extends Component {
         open={open}
         selectedItem={selectedItem}
       >
-        <div className="itemSelectContent">
-          <div className="items">{children}</div>
-          <Collapse className="itemInfo" isOpen={!!selectedItem}>
-            <Label>
-              <strong>{selectedItem}</strong>
-            </Label>
-            <br />
-            {this.getText(selectedItem)}
-            <br />
-            <Button onClick={this.confirmSelection}> Confirm Selection </Button>
-          </Collapse>
-        </div>
+        <div className="items">{children}</div>
+        <Collapse isOpen={!!selectedItem}>
+          <Label>
+            <strong>{selectedItem}</strong>
+          </Label>
+          <br />
+          <div className="itemInfo">{this.getText(selectedItem)}</div>
+          <br />
+          <Button onClick={this.confirmSelection}> Confirm Selection </Button>
+        </Collapse>
       </ItemDrawer>
     );
   }

@@ -3,9 +3,12 @@ import ItemSelect from '../common/itemSelect';
 import Case from './Case';
 
 const itemText = {
-  HTPC: 'htpc text',
-  'Mid Tower': 'mid text',
-  'Full Tower': 'full text',
+  HTPC:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim reprehenderit nulla impedit similique repudiandae placeat aliquam vel, ad nesciunt laborum, officiis facere, ducimus natus asperiores? Ipsa iure similique ex eius!',
+  'Mid Tower':
+    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat laudantium magnam, id eaque eum qui magni soluta error harum, eveniet nam doloribus nisi dolorum ducimus aspernatur, aliquam aliquid voluptatum dolore.',
+  'Full Tower':
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, recusandae! Voluptatum maxime possimus eos laudantium tempore. Quod facilis provident veritatis incidunt iure impedit necessitatibus nemo nulla, aperiam inventore quidem aliquam!',
 };
 
 const items = [
@@ -27,11 +30,11 @@ class CaseSelect extends Component {
 
   render() {
     return (
-      <ItemSelect className={`caseSelect ${this.props.className}`} itemText={itemText} selectedItem={this.state.selectedCase}>
+      <ItemSelect itemText={itemText} selectedItem={this.state.selectedCase}>
         {items &&
           items.map(props => (
             <Case
-              className="case"
+              className="item--center"
               {...props}
               key={props.name}
               onClick={() => {

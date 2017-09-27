@@ -1,0 +1,13 @@
+.navbar {
+  background-color: #3fa38a;
+  box-shadow: -0.2em -0.2em 2em #000000;
+}
+
+.navbar a {
+  color: #fff;
+  text-shadow: 0.05em 0.05em 0.25em #000;
+}
+
+.navbar a:hover {
+  margin-top: -.1em;
+}

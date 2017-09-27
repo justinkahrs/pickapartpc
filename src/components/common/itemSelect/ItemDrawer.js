@@ -5,7 +5,7 @@ import Trash from 'react-icons/lib/ti/trash';
 import './itemDrawer.css';
 
 const ItemDrawer = ({ selectedItem, clear, confirmed, open, showMain, children }) => (
-  <Container className="itemDrawer">
+  <Container className={open ? 'itemDrawer' : 'itemDrawer--collapsed'}>
     <div className="itemDrawer__header">
       <Label className="itemDrawer__label" onClick={showMain}>
         Case Size {confirmed && selectedItem && `> ${selectedItem}`}
@@ -18,7 +18,9 @@ const ItemDrawer = ({ selectedItem, clear, confirmed, open, showMain, children }
       )}
     </div>
     <hr />
-    <Collapse isOpen={!confirmed || open}>{children}</Collapse>
+    <Collapse className="" isOpen={!confirmed || open}>
+      {children}
+    </Collapse>
   </Container>
 );
 export default ItemDrawer;

@@ -8,8 +8,8 @@ const Build = () => (
   <Container>
     <h1 className="build__header">Build</h1>
     <Col lg="12" className="build">
-      <CaseSelect className="build__item" />
-      <CaseSelect className="build__item" />
+      <CaseSelect />
+      <CaseSelect />
     </Col>
   </Container>
 );

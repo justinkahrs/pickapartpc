@@ -1,10 +1,10 @@
 .build {
+  border-radius: 0.5em;
   background-color: white;
   padding: 2em;
+  box-shadow: 0.3em 0.3em 0.5em #44ae93;
 }
 .build__header {
-  color: white;
-  padding: 2.5em 2.5em 1.5em 2.5em;
 }
 .build__item {
   padding: 1em;

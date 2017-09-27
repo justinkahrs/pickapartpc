@@ -1,8 +1,10 @@
 .itemDrawer {
   text-align: left;
+  min-height: 340px;
+  margin-bottom: 2em;
 }
-.itemDrawer_header {
-  max-height: 5vh;
+.itemDrawer--collapsed {
+  text-align: left;
 }
 .itemDrawer__label {
   margin: 0;

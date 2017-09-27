@@ -1,9 +1,10 @@
 import React from 'react';
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { NavLink as RRNavLink } from 'react-router-dom';
+import './navigation.css';
 
 const Navigation = () => (
-  <Navbar>
+  <Navbar fixed="true">
     <NavbarBrand to="/" tag={RRNavLink}>
       Pick A Part PC
     </NavbarBrand>

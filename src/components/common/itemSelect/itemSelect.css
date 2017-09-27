@@ -1,7 +1,5 @@
 .items {
   display: flex;
-}
-.itemSelectContent {
-  margin: 0;
-  padding: 0;
+  min-height: 177px;
+  padding-top: 1em;
 }
