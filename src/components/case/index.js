@@ -3,18 +3,17 @@ import ItemSelect from '../common/itemSelect';
 import Case from './Case';
 
 const itemText = {
-  HTPC:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim reprehenderit nulla impedit similique repudiandae placeat aliquam vel, ad nesciunt laborum, officiis facere, ducimus natus asperiores? Ipsa iure similique ex eius!',
-  'Mid Tower':
-    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat laudantium magnam, id eaque eum qui magni soluta error harum, eveniet nam doloribus nisi dolorum ducimus aspernatur, aliquam aliquid voluptatum dolore.',
+  Small:
+    'Great when working with limited space and can still pack a punch, but it will cost more if it needs to be a real workhorse.',
+  'Mid Tower': "Probably what you think of when you think 'Desktop PC'.",
   'Full Tower':
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, recusandae! Voluptatum maxime possimus eos laudantium tempore. Quod facilis provident veritatis incidunt iure impedit necessitatibus nemo nulla, aperiam inventore quidem aliquam!',
+    'A huge ass case for when you need many hard drives, multiple graphics cards, or watercooling.',
 };
 
 const items = [
-  { name: 'HTPC', slits: 1 },
-  { name: 'Mid Tower', slits: 3 },
-  { name: 'Full Tower', slits: 5 },
+  { name: 'Small', slits: 1 },
+  { name: 'Mid Tower', slits: 4 },
+  { name: 'Full Tower', slits: 7 },
 ];
 
 class CaseSelect extends Component {
@@ -31,7 +30,7 @@ class CaseSelect extends Component {
   render() {
     return (
       <ItemSelect
-        minHeight={'190px'}
+        minHeight={'230px'}
         itemText={itemText}
         selectedItem={this.state.selectedCase}
         name={'Case Size'}

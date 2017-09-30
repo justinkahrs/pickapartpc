@@ -3,10 +3,8 @@ import ItemSelect from '../common/itemSelect';
 import Cpu from './Cpu';
 
 const itemText = {
-  AMD:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim reprehenderit nulla impedit similique repudiandae placeat aliquam vel, ad nesciunt laborum, officiis facere, ducimus natus asperiores? Ipsa iure similique ex eius!',
-  Intel:
-    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat laudantium magnam, id eaque eum qui magni soluta error harum, eveniet nam doloribus nisi dolorum ducimus aspernatur, aliquam aliquid voluptatum dolore.',
+  AMD: 'If you know you want to run an AMD machine.',
+  Intel: 'If you know you want to run an Intel machine.',
 };
 
 const items = [{ name: 'AMD' }, { name: 'Intel' }];
@@ -24,7 +22,12 @@ class CpuSelect extends Component {
 
   render() {
     return (
-      <ItemSelect itemText={itemText} selectedItem={this.state.selectedCpu} name={'CPU'}>
+      <ItemSelect
+        minHeight={'100px'}
+        itemText={itemText}
+        selectedItem={this.state.selectedCpu}
+        name={'CPU'}
+      >
         {items &&
           items.map(props => (
             <Cpu
