@@ -1,40 +1,33 @@
 import React, { Component } from 'react';
 import ItemSelect from '../common/itemSelect';
-import Case from './Case';
+import Cpu from './Cpu';
 
 const itemText = {
-  HTPC:
+  AMD:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim reprehenderit nulla impedit similique repudiandae placeat aliquam vel, ad nesciunt laborum, officiis facere, ducimus natus asperiores? Ipsa iure similique ex eius!',
-  'Mid Tower':
+  Intel:
     'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat laudantium magnam, id eaque eum qui magni soluta error harum, eveniet nam doloribus nisi dolorum ducimus aspernatur, aliquam aliquid voluptatum dolore.',
-  'Full Tower':
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, recusandae! Voluptatum maxime possimus eos laudantium tempore. Quod facilis provident veritatis incidunt iure impedit necessitatibus nemo nulla, aperiam inventore quidem aliquam!',
 };
 
-const items = [
-  { name: 'HTPC', slits: 1 },
-  { name: 'Mid Tower', slits: 3 },
-  { name: 'Full Tower', slits: 5 },
-];
+const items = [{ name: 'AMD' }, { name: 'Intel' }];
 
-class CaseSelect extends Component {
+class CpuSelect extends Component {
   state = {
-    selectedCase: '',
+    selectedCpu: '',
   };
 
   select = (e: string) => {
     this.setState({
-      selectedCase: this.state.selectedCase === e ? undefined : items.find(i => e === i.name).name,
+      selectedCpu: this.state.selectedCpu === e ? undefined : items.find(i => e === i.name).name,
     });
   };
 
   render() {
     return (
-      <ItemSelect itemText={itemText} selectedItem={this.state.selectedCase}>
+      <ItemSelect itemText={itemText} selectedItem={this.state.selectedCpu} name={'CPU'}>
         {items &&
           items.map(props => (
-            <Case
-              className="item--center"
+            <Cpu
               {...props}
               key={props.name}
               onClick={() => {
@@ -46,4 +39,4 @@ class CaseSelect extends Component {
     );
   }
 }
-export default CaseSelect;
+export default CpuSelect;

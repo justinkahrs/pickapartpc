@@ -4,11 +4,11 @@ import Check from 'react-icons/lib/md/check-circle';
 import Trash from 'react-icons/lib/ti/trash';
 import './itemDrawer.css';
 
-const ItemDrawer = ({ selectedItem, clear, confirmed, open, showMain, children }) => (
+const ItemDrawer = ({ selectedItem, clear, confirmed, name, open, showMain, children }) => (
   <Container className={open ? 'itemDrawer' : 'itemDrawer--collapsed'}>
     <div className="itemDrawer__header">
       <Label className="itemDrawer__label" onClick={showMain}>
-        Case Size {confirmed && selectedItem && `> ${selectedItem}`}
+        {name} {confirmed && selectedItem && `> ${selectedItem}`}
       </Label>
       {confirmed && (
         <div className="itemDrawer__buttons">
