@@ -30,7 +30,12 @@ class CaseSelect extends Component {
 
   render() {
     return (
-      <ItemSelect itemText={itemText} selectedItem={this.state.selectedCase} name={'Case Size'}>
+      <ItemSelect
+        minHeight={'190px'}
+        itemText={itemText}
+        selectedItem={this.state.selectedCase}
+        name={'Case Size'}
+      >
         {items &&
           items.map(props => (
             <Case

@@ -1,9 +1,9 @@
 // @flow
 import * as React from 'react';
-import { Col, Container } from 'reactstrap';
+import { Button, Col, Container } from 'reactstrap';
 import CaseSelect from '../components/case';
 import CpuSelect from '../components/cpu';
-import RamSelect from '../components/ram';
+import Multitasking from '../components/multitasking';
 import './build.css';
 
 const Build = () => (
@@ -12,7 +12,10 @@ const Build = () => (
     <Col lg="12" className="build">
       <CaseSelect />
       <CpuSelect />
-      <RamSelect />
+      <Multitasking />
+      <Button style={{ float: 'right' }} onClick={() => alert('You just bought that shit.')}>
+        Buy now
+      </Button>
     </Col>
   </Container>
 );

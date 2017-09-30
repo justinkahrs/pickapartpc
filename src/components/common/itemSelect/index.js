@@ -47,7 +47,9 @@ export default class ItemSelect extends Component {
         open={open}
         selectedItem={selectedItem}
       >
-        <Row className="items">{children}</Row>
+        <Row style={{ minHeight: `${this.props.minHeight}` }} className="items">
+          {children}
+        </Row>
         <Collapse isOpen={!!selectedItem}>
           <div className="itemInfo">
             <Label>
