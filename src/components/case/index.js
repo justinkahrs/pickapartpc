@@ -4,7 +4,7 @@ import Case from './Case';
 
 const itemText = {
   Small:
-    'Great when working with limited space and can still pack a punch, but it will cost more if it needs to be a real workhorse.',
+    'Great when working with limited space. It can still pack a punch, but it will cost more if it needs to be a real workhorse.',
   'Mid Tower': "Probably what you think of when you think 'Desktop PC'.",
   'Full Tower':
     'A huge ass case for when you need many hard drives, multiple graphics cards, or watercooling.',

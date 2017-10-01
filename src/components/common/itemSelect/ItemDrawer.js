@@ -8,7 +8,7 @@ const ItemDrawer = ({ selectedItem, clear, confirmed, name, open, showMain, chil
   <Container className={open ? 'itemDrawer' : 'itemDrawer--collapsed'}>
     <div className="itemDrawer__header">
       <Label className="itemDrawer__label" onClick={showMain}>
-        {name} {confirmed && selectedItem && `> ${selectedItem}`}
+        <strong>{name}</strong> {confirmed && selectedItem && `> ${selectedItem}`}
       </Label>
       {confirmed && (
         <div className="itemDrawer__buttons">

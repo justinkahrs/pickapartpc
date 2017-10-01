@@ -53,12 +53,14 @@ export default class ItemSelect extends Component {
         <Collapse isOpen={!!selectedItem}>
           <div className="itemInfo">
             <Label>
-              <strong>{selectedItem}</strong>
+              <u>{selectedItem}</u>
             </Label>
             <br />
             {this.getText(selectedItem)}
             <br />
-            <Button onClick={this.confirmSelection}> Confirm Selection </Button>
+            <Button style={{ marginBottom: '1em' }} onClick={this.confirmSelection}>
+              Confirm Selection
+            </Button>
           </div>
         </Collapse>
       </ItemDrawer>

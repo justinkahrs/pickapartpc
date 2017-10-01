@@ -36,6 +36,7 @@ class Multitasking extends Component {
             {items &&
               items.map(props => (
                 <ListGroupItem
+                  key={props.name}
                   active={this.state.selected === props.name}
                   onClick={() => {
                     this.select(props.name);
