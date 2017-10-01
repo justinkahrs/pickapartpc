@@ -10,7 +10,7 @@ export default class ItemSelect extends Component {
     open: true,
   };
 
-  getText = selectedItem => this.props.itemText[selectedItem];
+  getText = () => this.props.items && this.props.items.map(item => item.text);
 
   showMain = () => {
     if (this.state.confirmed) {
@@ -35,7 +35,7 @@ export default class ItemSelect extends Component {
   };
 
   render() {
-    const { name, selectedItem, children } = this.props;
+    const { items, name, selectedItem, children } = this.props;
     const { confirmed, open } = this.state;
     return (
       <ItemDrawer
@@ -48,7 +48,11 @@ export default class ItemSelect extends Component {
         selectedItem={selectedItem}
       >
         <Row style={{ minHeight: `${this.props.minHeight}` }} className="items">
-          {children}
+          {children ||
+            (items &&
+              items.map(item => (
+                <item.type key={item.name} {...item} onClick={() => this.props.select(item.name)} />
+              )))}
         </Row>
         <Collapse isOpen={!!selectedItem}>
           <div className="itemInfo">
@@ -56,7 +60,7 @@ export default class ItemSelect extends Component {
               <u>{selectedItem}</u>
             </Label>
             <br />
-            {this.getText(selectedItem)}
+            {selectedItem !== '' ? items.find(item => item.name === selectedItem).text : null}
             <br />
             <Button style={{ marginBottom: '1em' }} onClick={this.confirmSelection}>
               Confirm Selection

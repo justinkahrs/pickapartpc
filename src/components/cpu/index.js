@@ -1,45 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 import ItemSelect from '../common/itemSelect';
 import Cpu from './Cpu';
+import * as CpuActions from '../../actions/cpu';
 
-const itemText = {
-  AMD: 'If you know you want to run an AMD machine.',
-  Intel: 'If you know you want to run an Intel machine.',
-};
+const items = [
+  { type: Cpu, name: 'AMD', text: 'If you know you want to run an AMD machine.' },
+  { type: Cpu, name: 'Intel', text: 'If you know you want to run an Intel machine.' },
+];
 
-const items = [{ name: 'AMD' }, { name: 'Intel' }];
-
-class CpuSelect extends Component {
-  state = {
-    selectedCpu: '',
-  };
-
-  select = (e: string) => {
-    this.setState({
-      selectedCpu: this.state.selectedCpu === e ? undefined : items.find(i => e === i.name).name,
-    });
-  };
-
-  render() {
-    return (
-      <ItemSelect
-        minHeight={'100px'}
-        itemText={itemText}
-        selectedItem={this.state.selectedCpu}
-        name={'CPU'}
-      >
-        {items &&
-          items.map(props => (
-            <Cpu
-              {...props}
-              key={props.name}
-              onClick={() => {
-                this.select(props.name);
-              }}
-            />
-          ))}
-      </ItemSelect>
-    );
-  }
+function CpuSelect({ select, selected }) {
+  return (
+    <ItemSelect
+      items={items}
+      type={Cpu}
+      minHeight={'230px'}
+      select={select}
+      selectedItem={selected}
+      name={'Case Size'}
+    />
+  );
 }
-export default CpuSelect;
+const mapDispatchToProps = dispatch => ({
+  select: (id) => {
+    dispatch(CpuActions.selectCpu(id));
+  },
+});
+const mapStateToProps = state => ({
+  selected: state.cpu,
+});
+export default connect(mapStateToProps, mapDispatchToProps)(CpuSelect);

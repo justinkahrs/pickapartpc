@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux';
-import Case from './case';
+import caseSize from './case';
+import cpu from './cpu';
+import multitasking from './multitasking';
 
 const rootReducer = combineReducers({
-  Case,
+  caseSize,
+  cpu,
+  multitasking,
 });
 export default rootReducer;

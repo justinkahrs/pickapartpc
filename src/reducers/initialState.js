@@ -1,5 +1,5 @@
 export default {
-  case: {
-    selectedCase: '',
-  },
+  case: '',
+  cpu: '',
+  multitasking: '',
 };

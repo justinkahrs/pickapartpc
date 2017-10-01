@@ -1,5 +1,5 @@
-const selectCase = (item) => ({
-    type: 'select',
-    selectedCase: item,
-  });
-export default selectCase;
+import { createAction } from 'redux-actions';
+
+export const SELECT_CASE = 'SELECT_CASE';
+
+export const selectCase = createAction(SELECT_CASE);

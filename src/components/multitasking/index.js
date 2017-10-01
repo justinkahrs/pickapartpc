@@ -1,54 +1,55 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 import { Col, ListGroup, ListGroupItem } from 'reactstrap';
 import ItemSelect from '../common/itemSelect';
+import * as MultitaskingActions from '../../actions/multitasking';
 
-const itemText = {
-  Low: 'For the budgest conscious, or light use machine ',
-  Normal:
-    "You occasionally leave a lot of tabs open, but who doesn't? Fine for social media, schoolwork, or light office work.",
-  Excessive: 'You love leaving all of your favorite apps open, and hate restarting your computer.',
-  Ridiculous: "You know what a virtual machine is, and you aren't afraid to use it.",
-};
+const items = [
+  { name: 'Low', text: 'For the budgest conscious, or light use machine ' },
+  {
+    name: 'Normal',
+    text:
+      "You occasionally leave a lot of tabs open, but who doesn't? Fine for social media, schoolwork, or light office work.",
+  },
+  {
+    name: 'Excessive',
+    text: 'You love leaving all of your favorite apps open, and hate restarting your computer.',
+  },
+  {
+    name: 'Ridiculous',
+    text: "You know what a virtual machine is, and you aren't afraid to use it.",
+  },
+];
 
-const items = [{ name: 'Low' }, { name: 'Normal' }, { name: 'Excessive' }, { name: 'Ridiculous' }];
-
-class Multitasking extends Component {
-  state = {
-    selected: '',
-  };
-
-  select = (e: string) => {
-    this.setState({
-      selected: this.state.selected === e ? undefined : items.find(i => e === i.name).name,
-    });
-  };
-
-  render() {
-    return (
-      <ItemSelect
-        minHeight={'230px'}
-        itemText={itemText}
-        selectedItem={this.state.selected}
-        name={'Multitasking'}
-      >
-        <Col>
-          <ListGroup>
-            {items &&
-              items.map(props => (
-                <ListGroupItem
-                  key={props.name}
-                  active={this.state.selected === props.name}
-                  onClick={() => {
-                    this.select(props.name);
-                  }}
-                >
-                  {props.name}
-                </ListGroupItem>
-              ))}
-          </ListGroup>
-        </Col>
-      </ItemSelect>
-    );
-  }
+function Multitasking({ select, selected }) {
+  return (
+    <ItemSelect minHeight={'230px'} items={items} selectedItem={selected} name={'Multitasking'}>
+      <Col>
+        <ListGroup>
+          {items &&
+            items.map(props => (
+              <ListGroupItem
+                key={props.name}
+                active={selected === props.name}
+                onClick={() => {
+                  select(props.name);
+                }}
+              >
+                {props.name}
+              </ListGroupItem>
+            ))}
+        </ListGroup>
+      </Col>
+    </ItemSelect>
+  );
 }
-export default Multitasking;
+
+const mapDispatchToProps = dispatch => ({
+  select: (id) => {
+    dispatch(MultitaskingActions.selectMultitasking(id));
+  },
+});
+const mapStateToProps = state => ({
+  selected: state.multitasking,
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Multitasking);
