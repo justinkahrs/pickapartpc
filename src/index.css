@@ -13,6 +13,6 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: sans-serif;
-  background-color: #55dab8;
+  font-family: "Raleway", sans-serif;
+  background-image: linear-gradient(120deg, #55dab8 40%, #00f3e1 100%);
 }

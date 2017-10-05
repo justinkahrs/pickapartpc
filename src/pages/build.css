@@ -1,17 +1,4 @@
-.build {
-  max-height: 20%;
-  overflow: auto;
-  border-radius: 0.5em;
-  background-color: white;
-  padding: 2em;
-  box-shadow: 0.2em 0.3em 0.5em #44ae93, -0.2em 0.3em 0.5em #44ae93;
-}
 .build__item {
   padding: 1em;
 }
 
-@media only screen and (max-device-width: 480px) {
-  .build {
-    padding: 1em;
-  }
-}

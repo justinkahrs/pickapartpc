@@ -1,0 +1,11 @@
+.pageContainer {
+  border-radius: 0.5em;
+  background-color: white;
+  padding: 2em;
+  box-shadow: 0.2em 0.3em 0.5em #44ae93, -0.2em 0.3em 0.5em #44ae93;
+}
+@media only screen and (max-device-width: 480px) {
+  .pageContainer {
+    padding: 1em;
+  }
+}

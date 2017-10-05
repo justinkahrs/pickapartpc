@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react';
+import PageContainer from '../components/common/pageContainer';
 
-const Contact = () => <h1>Contact</h1>;
+const Contact = () => <PageContainer title="Contact" header />;
 
 export default Contact;
