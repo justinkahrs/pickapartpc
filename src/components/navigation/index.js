@@ -4,7 +4,7 @@ import { NavLink as RRNavLink } from 'react-router-dom';
 import './navigation.css';
 
 const Navigation = () => (
-  <Navbar fixed="true">
+  <Navbar>
     <NavbarBrand to="/" tag={RRNavLink}>
       Pick A Part PC
     </NavbarBrand>

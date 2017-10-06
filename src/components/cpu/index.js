@@ -14,7 +14,7 @@ function CpuSelect({ select, selected }) {
     <ItemSelect
       items={items}
       type={Cpu}
-      minHeight={'230px'}
+      minHeight={'150px'}
       select={select}
       selectedItem={selected}
       name={'Case Size'}
