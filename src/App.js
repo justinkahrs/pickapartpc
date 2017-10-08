@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Navigation from './components/navigation';
 import Build from './pages/Build';
 import Home from './pages/Home';
