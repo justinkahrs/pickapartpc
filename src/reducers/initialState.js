@@ -1,5 +1,5 @@
 export default {
-  case: '',
+  caseSize: '',
   cpu: '',
   multitasking: '',
 };

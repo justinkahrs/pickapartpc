@@ -4,13 +4,13 @@ import Check from 'react-icons/lib/md/check-circle';
 import Trash from 'react-icons/lib/ti/trash';
 import './itemDrawer.css';
 
-const ItemDrawer = ({ selectedItem, clear, confirmed, name, open, showMain, children }) => (
+const ItemDrawer = ({ selected, clear, name, open, showMain, children }) => (
   <Container className={open ? 'itemDrawer' : 'itemDrawer--collapsed'}>
     <div className="itemDrawer__header">
       <Label className="itemDrawer__label" onClick={showMain}>
-        <strong>{name}</strong> {confirmed && selectedItem && `> ${selectedItem}`}
+        <strong>{name}</strong> {selected && `> ${selected}`}
       </Label>
-      {confirmed && (
+      {selected && (
         <div className="itemDrawer__buttons">
           <Check className="itemDrawer__checkButton" />
           <Trash className="itemDrawer__trashButton" onClick={clear} />
@@ -18,7 +18,7 @@ const ItemDrawer = ({ selectedItem, clear, confirmed, name, open, showMain, chil
       )}
     </div>
     <hr />
-    <Collapse className="" isOpen={!confirmed || open}>
+    <Collapse className="" isOpen={selected === ''}>
       {children}
     </Collapse>
   </Container>

@@ -27,14 +27,15 @@ const items = [
   },
 ];
 
-function CaseSelect({ select, selected }) {
+function CaseSelect({ clear, select, selected }) {
   return (
     <ItemSelect
       items={items}
       type={Case}
       minHeight={'230px'}
       select={select}
-      selectedItem={selected}
+      clear={clear}
+      selected={selected}
       name={'Case Size'}
     />
   );
@@ -42,6 +43,9 @@ function CaseSelect({ select, selected }) {
 const mapDispatchToProps = dispatch => ({
   select: (id) => {
     dispatch(CaseActions.selectCase(id));
+  },
+  clear: () => {
+    dispatch(CaseActions.clearCase());
   },
 });
 const mapStateToProps = state => ({
