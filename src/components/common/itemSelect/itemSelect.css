@@ -1,3 +1,8 @@
 .items {
   padding-top: 0.5em;
 }
+
+.list-group-item.active {
+  background-color: #3fa38a;
+  border-color: #3fa38a;
+}

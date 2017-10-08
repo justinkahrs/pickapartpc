@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Col, ListGroup, ListGroupItem } from 'reactstrap';
 import ItemSelect from '../common/itemSelect';
 import * as MultitaskingActions from '../../actions/multitasking';
 
@@ -21,32 +20,26 @@ const items = [
   },
 ];
 
-function Multitasking({ select, selected }) {
+function Multitasking({ clear, select, selected }) {
   return (
-    <ItemSelect minHeight={'230px'} items={items} selectedItem={selected} name={'Multitasking'}>
-      <Col>
-        <ListGroup>
-          {items &&
-            items.map(props => (
-              <ListGroupItem
-                key={props.name}
-                active={selected === props.name}
-                onClick={() => {
-                  select(props.name);
-                }}
-              >
-                {props.name}
-              </ListGroupItem>
-            ))}
-        </ListGroup>
-      </Col>
-    </ItemSelect>
+    <ItemSelect
+      minHeight={'230px'}
+      items={items}
+      select={select}
+      selected={selected}
+      name={'Multitasking'}
+      clear={clear}
+      needsListGroup
+    />
   );
 }
 
 const mapDispatchToProps = dispatch => ({
   select: (id) => {
     dispatch(MultitaskingActions.selectMultitasking(id));
+  },
+  clear: () => {
+    dispatch(MultitaskingActions.clearMultitaksing());
   },
 });
 const mapStateToProps = state => ({

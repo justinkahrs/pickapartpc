@@ -5,6 +5,8 @@ export default (state = initialState.multitasking, action) => {
     case 'SELECT_MULTITASKING':
       if (state !== action.payload) return action.payload;
       return state;
+    case 'CLEAR_MULTITASKING':
+      return '';
     default:
       return state;
   }

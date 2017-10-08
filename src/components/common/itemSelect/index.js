@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Collapse, Label, Row } from 'reactstrap';
+import { Button, Col, Collapse, Label, ListGroup, ListGroupItem, Row } from 'reactstrap';
 import './itemSelect.css';
 
 import ItemDrawer from './ItemDrawer';
@@ -17,9 +17,26 @@ export default class ItemSelect extends Component {
     });
   };
 
+  getItems = items =>
+    items.map(item => (
+      <item.type key={item.name} {...item} onClick={() => this.setSelect(items, item.name)}>
+        {item.name}
+      </item.type>
+    ));
+
+  getListItems = items =>
+    items.map(item => (
+      <ListGroupItem
+        active={this.state.selected === item.name}
+        key={item.name}
+        onClick={() => this.setSelect(items, item.name)}
+      >
+        {item.name}
+      </ListGroupItem>
+    ));
 
   render() {
-    const { clear, items, name, selected, children } = this.props;
+    const { clear, items, name, needsListGroup, selected } = this.props;
     const { confirmed, infoText } = this.state;
     return (
       <ItemDrawer
@@ -32,26 +49,24 @@ export default class ItemSelect extends Component {
         selected={selected}
       >
         <Row style={{ minHeight: `${this.props.minHeight}` }} className="items">
-          {children ||
-            (items &&
-              items.map(item => (
-                <item.type
-                  key={item.name}
-                  {...item}
-                  onClick={() => this.setSelect(items, item.name)}
-                />
-              )))}
+          {needsListGroup ? (
+            <Col>
+              <ListGroup>{this.getListItems(items)}</ListGroup>
+            </Col>
+          ) : (
+            this.getItems(items)
+          )}
         </Row>
         <Collapse isOpen={!!this.state.selected}>
           <div className="itemInfo">
             <Label>
-              <u>{this.state.selected}</u>
+              <u>{selected ? '' : this.state.selected}</u>
             </Label>
             <br />
-            {infoText}
+            {selected ? '' : infoText}
             <br />
             <Button
-              style={{ marginBottom: '1em' }}
+              style={{ marginBottom: '1.5em' }}
               onClick={() => this.props.select(this.state.selected)}
             >
               Confirm Selection

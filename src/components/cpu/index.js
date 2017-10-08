@@ -9,21 +9,25 @@ const items = [
   { type: Cpu, name: 'Intel', text: 'If you know you want to run an Intel machine.' },
 ];
 
-function CpuSelect({ select, selected }) {
+function CpuSelect({ clear, select, selected }) {
   return (
     <ItemSelect
       items={items}
       type={Cpu}
       minHeight={'150px'}
       select={select}
-      selectedItem={selected}
-      name={'Case Size'}
+      selected={selected}
+      name={'CPU'}
+      clear={clear}
     />
   );
 }
 const mapDispatchToProps = dispatch => ({
   select: (id) => {
     dispatch(CpuActions.selectCpu(id));
+  },
+  clear: () => {
+    dispatch(CpuActions.clearCpu());
   },
 });
 const mapStateToProps = state => ({
