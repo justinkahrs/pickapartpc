@@ -4,7 +4,7 @@ import ItemSelect from '../common/itemSelect';
 import * as MultitaskingActions from '../../actions/multitasking';
 
 const items = [
-  { name: 'Low', text: 'For the budgest conscious, or light use machine ' },
+  { name: 'Low', text: 'For the budget conscious, or light use machine ' },
   {
     name: 'Normal',
     text:

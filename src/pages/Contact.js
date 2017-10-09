@@ -1,7 +1,48 @@
 // @flow
 import * as React from 'react';
 import PageContainer from '../components/common/pageContainer';
+import twitterLogo from '../static/twitter.png';
+import githubLogo from '../static/github.png';
 
-const Contact = () => <PageContainer title="Contact" header />;
+const styles = {
+  center: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  },
+  logo: {
+    img: {
+      width: '32px',
+      height: '32px',
+    },
+    flexDirection: 'row',
+  },
+};
+
+const Contact = () => (
+  <PageContainer title="Contact" header>
+    <div>
+      Pick a Part PC was made as a proof of concept for my portfolio. If you like what you see,
+      please contact me!
+    </div>
+    <br />
+    <strong>
+      <u>Email</u>
+    </strong>
+    <p>justin@justinkahrs.com</p>
+    <strong>
+      <u>Social</u>
+    </strong>
+    <div style={styles.logo}>
+      <a href="https://twitter.com/justin_kahrs">
+        <img style={styles.logo.img} src={twitterLogo} alt="Justin Kahrs Twitter Profile" />
+      </a>
+      <a href="https://github.com/justinkahrs">
+        <img style={styles.logo.img} src={githubLogo} alt="Justin Kahrs Github Profile" />
+      </a>
+    </div>
+  </PageContainer>
+);
 
 export default Contact;
