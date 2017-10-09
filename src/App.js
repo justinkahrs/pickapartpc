@@ -18,7 +18,7 @@ const App = (props: { path: string }) => (
         <Route
           render={() => (
             <PageContainer title="Page Not Found">
-              I'm not sure where you're trying to go, but it doesn't exist.
+              I&#39;m not sure where you&#39;re trying to go, but it doesn&#39;t exist.
             </PageContainer>
           )}
         />
