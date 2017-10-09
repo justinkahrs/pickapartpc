@@ -8,7 +8,7 @@
 
 .navbar a {
   color: #fff;
-  text-shadow: 0.05em 0.05em 0.25em #000;
+  text-shadow: 0.05em 0.05em 0.5em #000;
 }
 
 .navbar a:hover {

@@ -19,8 +19,7 @@ const App = (props: { path: string }) => (
         <Route
           render={() => (
             <PageContainer title="Page Not Found">
-              Github client-side routing sucks, so if this is still hosted there, try clicking a nav
-              link
+              I'm not sure where you're trying to go, but it doesn't exist.
             </PageContainer>
           )}
         />
