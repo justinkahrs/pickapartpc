@@ -11,6 +11,10 @@ class Build extends Component {
   state = {
     modal: false,
   };
+  componentWillMount() {
+    document.body.scrollTop = 0;
+    window.scrollTo(0, 0);
+  }
   toggle = () => {
     this.setState({
       modal: !this.state.modal,

@@ -4,7 +4,7 @@ import './pageContainer.css';
 
 const PageContainer = ({ title, children }) => (
   <Container>
-    <h1 className={`${title}__header`}>{title}</h1>
+    <h1 className={`${title.replace(/\s/g, '')}__header`}>{title}</h1>
     <Col lg="12" className="pageContainer">
       {children}
     </Col>
